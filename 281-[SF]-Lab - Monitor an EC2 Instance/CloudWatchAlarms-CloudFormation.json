@@ -1,0 +1,28 @@
+{
+    "Type": "AWS::CloudWatch::Alarm",
+    "Properties": {
+        "AlarmName": "LabCPUUtilizationAlarm",
+        "AlarmDescription": "CloudWatch alarm for Stress Test EC2 instance CPUUtilization",
+        "ActionsEnabled": true,
+        "OKActions": [],
+        "AlarmActions": [
+            "arn:aws:sns:us-west-2:682558042518:MyCwAlarm"
+        ],
+        "InsufficientDataActions": [],
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Statistic": "Average",
+        "Dimensions": [
+            {
+                "Name": "InstanceId",
+                "Value": "i-01f72d31ddb59256f"
+            }
+        ],
+        "Period": 60,
+        "EvaluationPeriods": 1,
+        "DatapointsToAlarm": 1,
+        "Threshold": 60,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "TreatMissingData": "missing"
+    }
+}

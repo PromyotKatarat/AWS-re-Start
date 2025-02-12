@@ -1,0 +1,15 @@
+aws cloudwatch put-metric-alarm \
+--alarm-name 'LabCPUUtilizationAlarm' \
+--alarm-description 'CloudWatch alarm for Stress Test EC2 instance CPUUtilization' \
+--actions-enabled \
+--alarm-actions 'arn:aws:sns:us-west-2:682558042518:MyCwAlarm' \
+--metric-name 'CPUUtilization' \
+--namespace 'AWS/EC2' \
+--statistic 'Average' \
+--dimensions '[{"Name":"InstanceId","Value":"i-01f72d31ddb59256f"}]' \
+--period 60 \
+--evaluation-periods 1 \
+--datapoints-to-alarm 1 \
+--threshold 60 \
+--comparison-operator 'GreaterThanThreshold' \
+--treat-missing-data 'missing'
