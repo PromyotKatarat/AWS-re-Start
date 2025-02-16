@@ -1,0 +1,1 @@
+[ec2-user@ip-10-200-0-238 ~]$ aws iam get-policy-version --version-id v1 --policy-arn  arn:aws:iam::330392583013:policy/lab_policy > lab_policy.json
