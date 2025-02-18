@@ -1,0 +1,19 @@
+AMIID=ami-065212a60f30e3798
+HTTPACCESS=sg-077bef47d2d0f2b57
+COMMANDHOSTIP=52.27.201.181
+KEYNAME=vockey
+SUBNETID=subnet-00617dc69bfa23232
+
+aws ec2 run-instances --key-name $KEYNAME --instance-type t3.micro --image-id $AMIID --user-data file:///home/ec2-user/UserData.txt --security-group-ids $HTTPACCESS --subnet-id $SUBNETID --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=WebServer}]' --output text --query 'Instances[*].InstanceId'
+
+NEW_INSTANCE_ID="i-07f4cf3b34ca52864"
+
+aws ec2 wait instance-running --instance-ids $NEW_INSTANCE_ID
+
+aws ec2 describe-instances --instance-id $NEW_INSTANCE_ID --query 'Reservations[0].Instances[0].NetworkInterfaces[0].Association.PublicDnsName'
+
+aws ec2 create-image --name WebServerAMI --instance-id $NEW_INSTANCE_ID
+
+new_ami=ami-0a8234e3d31c8c53f
+
+WebServerELB-1763448558.us-west-2.elb.amazonaws.com
