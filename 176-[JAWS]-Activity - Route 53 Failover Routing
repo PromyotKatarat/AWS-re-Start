@@ -1,0 +1,38 @@
+You are receiving this email because your Amazon CloudWatch Alarm "Primary-Website-Health-awsroute53-b01e3c72-ad8c-4807-bf95-e76e02a3d81e-Low-HealthCheckStatus" in the US East (N. Virginia) region has entered the ALARM state, because "Threshold Crossed: 1 datapoint [0.0 (19/02/25 10:23:00)] was less than the threshold (1.0)." at "Wednesday 19 February, 2025 10:24:43 UTC".
+
+View this alarm in the AWS Management Console:
+https://us-east-1.console.aws.amazon.com/cloudwatch/deeplink.js?region=us-east-1#alarmsV2:alarm/Primary-Website-Health-awsroute53-b01e3c72-ad8c-4807-bf95-e76e02a3d81e-Low-HealthCheckStatus
+
+Alarm Details:
+- Name:                       Primary-Website-Health-awsroute53-b01e3c72-ad8c-4807-bf95-e76e02a3d81e-Low-HealthCheckStatus
+- Description:               
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 1 datapoint [0.0 (19/02/25 10:23:00)] was less than the threshold (1.0).
+- Timestamp:                  Wednesday 19 February, 2025 10:24:43 UTC
+- AWS Account:                591650396731
+- Alarm Arn:                  arn:aws:cloudwatch:us-east-1:591650396731:alarm:Primary-Website-Health-awsroute53-b01e3c72-ad8c-4807-bf95-e76e02a3d81e-Low-HealthCheckStatus
+
+Threshold:
+- The alarm is in the ALARM state when the metric is LessThanThreshold 1.0 for at least 1 of the last 1 period(s) of 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:                     AWS/Route53
+- MetricName:                          HealthCheckStatus
+- Dimensions:                          [HealthCheckId = b01e3c72-ad8c-4807-bf95-e76e02a3d81e]
+- Period:                              60 seconds
+- Statistic:                           Minimum
+- Unit:                                not specified
+
+
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:sns:us-east-1:591650396731:Primary-Website-Health]
+- INSUFFICIENT_DATA:
+
+
+--
+If you wish to stop receiving notifications from this topic, please click or visit the link below to unsubscribe:
+https://sns.us-east-1.amazonaws.com/unsubscribe.html?SubscriptionArn=arn:aws:sns:us-east-1:591650396731:Primary-Website-Health:d052a485-f0dc-4220-9868-b95c6ba69694&Endpoint=promyot.k1@gmail.com
+
+Please do not reply directly to this email. If you have any questions or comments regarding this email, please contact us at https://aws.amazon.com/support
